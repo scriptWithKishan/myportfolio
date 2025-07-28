@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { useTheme } from "../../context/theme-context";
-import { LogoutButton } from "../AuthButtons";
 
 export const Navbar = () => {
   const { theme, toggleTheme, themes } = useTheme();
@@ -11,7 +10,7 @@ export const Navbar = () => {
         theme === themes.light ? "bg-white" : "bg-neutral-900"
       }`}
     >
-      <Link to="/home" className="navbar-start space-x-4">
+      <Link to="/" className="navbar-start space-x-4">
         {theme === themes.light ? (
           <svg
             width="30"
@@ -64,7 +63,7 @@ export const Navbar = () => {
               className={`link link-hover ${
                 theme === themes.light ? "link-neutral" : ""
               }`}
-              to="/home"
+              to="/"
             >
               Home
             </Link>
@@ -118,9 +117,6 @@ export const Navbar = () => {
             >
               Contact
             </Link>
-          </li>
-          <li>
-            <LogoutButton />
           </li>
         </ul>
         <label className="swap swap-rotate">

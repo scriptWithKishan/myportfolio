@@ -1,22 +1,13 @@
-import { useAuth0 } from "@auth0/auth0-react";
-
 import { useTheme } from "../../context/theme-context";
 
-import { Navigate, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import { Navbar } from "../Navbar";
 
-import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import { useEffect } from "react";
-import { Loading } from "../Loading";
+import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const PageLayout = () => {
   const { theme, themes } = useTheme();
-
-  const { isAuthenticated, isLoading, logout } = useAuth0();
-
-  if (isLoading) return <Loading />;
-  if (!isAuthenticated) return <Navigate to="/" replace />;
 
   return (
     <div
