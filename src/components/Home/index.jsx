@@ -7,7 +7,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={`p-20 h-full flex justify-between`}>
+    <div className="p-10 flex justify-between items-center lg:p-20 h-full">
       <div className="">
         <div className="bg-linear-to-r from-cyan-300 to-stone-500 rounded-tl-4xl rounded-r-4xl py-2 px-4 inline-block">
           <h3 className="text-white font-bold text-md">Hello!</h3>
@@ -27,7 +27,7 @@ const HomePage = () => {
           </span>
         </h1>
         <p
-          className={`text-2xl mt-4 ${
+          className={`text-xl lg:text-2xl mt-4 ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >
@@ -56,7 +56,7 @@ const HomePage = () => {
         </div>
       </div>
       <img
-        className="self-center h-[350px] w-[350px]"
+        className="hidden lg:block self-center h-[350px] w-[350px]"
         src="/developer.png"
         alt="developer"
       />

@@ -16,8 +16,8 @@ const PageLayout = () => {
       }`}
     >
       <Navbar />
-      <div className="flex flex-1 justify-between">
-        <ul className="space-y-5 px-8 py-10 flex flex-col justify-end">
+      <div className="flex flex-1 h-full justify-between">
+        <ul className="hidden lg:flex flex-col justify-end space-y-5 px-8 py-10">
           <li>
             <a target="_black" href="https://github.com/scriptWithKishan">
               <div
@@ -70,7 +70,7 @@ const PageLayout = () => {
         <div className="flex-1 overflow-auto">
           <Outlet />
         </div>
-        <div className="flex flex-col justify-around items-center py-50">
+        <ul className="hidden lg:flex flex-col items-center justify-end space-y-30 px-8 py-20">
           <p
             className={`${
               theme === themes.light ? "text-black" : "text-white"
@@ -83,7 +83,7 @@ const PageLayout = () => {
               theme === themes.light ? "bg-black" : "bg-white"
             }`}
           />
-        </div>
+        </ul>
       </div>
     </div>
   );

@@ -5,26 +5,25 @@ const AboutPage = () => {
   const { theme, themes } = useTheme();
 
   return (
-    <div className={`w-full p-20`}>
+    <div className="p-5 w-full lg:p-20">
       <div className="flex justify-between w-full mb-6">
         <h2
-          className={`text-2xl  ${
+          className={`text-base lg:text-2xl  ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >
           <span className={` text-5xl font-semibold `}>T</span>
-          his is it,{" "}
-          <span className="text-4xl">;{`)`}</span>
+          his is it, <span className="hidden lg:inline text-4xl">;{`)`}</span>
         </h2>
         <hr
-          className={` w-5/6 self-end ${
+          className={`hidden lg:inline w-5/6 self-end ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         />
       </div>
       <div className="flex flex-col space-y-10">
         <p
-          className={`text-base leading-loose text-justify ${
+          className={`text-sm lg:text-base leading-loose text-justify ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >

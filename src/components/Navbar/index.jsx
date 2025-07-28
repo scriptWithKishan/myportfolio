@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 import { useTheme } from "../../context/theme-context";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export const Navbar = () => {
   const { theme, toggleTheme, themes } = useTheme();
 
   return (
     <div
-      className={`navbar px-15 py-10 ${
+      className={`px-5 py-5 navbar lg:px-15 lg:py-10 ${
         theme === themes.light ? "bg-white" : "bg-neutral-900"
       }`}
     >
@@ -48,7 +49,7 @@ export const Navbar = () => {
         )}
 
         <h1
-          className={`text-xl font-bold ${
+          className={`text-base lg:text-xl font-bold ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >
@@ -56,7 +57,7 @@ export const Navbar = () => {
           KISHAN A
         </h1>
       </Link>
-      <div className="navbar-end space-x-10">
+      <div className="hidden lg:flex navbar-end space-x-10">
         <ul className="space-x-6 flex text-sm items-center">
           <li>
             <Link
@@ -129,7 +130,7 @@ export const Navbar = () => {
 
           {/* Moon */}
           <svg
-            className="swap-on"
+            className="swap-off"
             width="40"
             height="40"
             viewBox="0 0 40 40"
@@ -155,7 +156,7 @@ export const Navbar = () => {
 
           {/* Sun */}
           <svg
-            className="swap-off"
+            className="swap-on"
             width="40"
             height="40"
             viewBox="0 0 40 40"
@@ -200,6 +201,125 @@ export const Navbar = () => {
             />
           </svg>
         </label>
+      </div>
+      <div className="navbar-end lg:hidden">
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost rounded-field"
+          >
+            <GiHamburgerMenu
+              className={`text-xl ${
+                theme === themes.light ? "text-black" : "text-white"
+              }`}
+            />
+          </div>
+          <ul
+            tabIndex={0}
+            className={`menu dropdown-content rounded-box z-1 mt-4 w-52 p-2 shadow-sm gap-2 ${
+              theme === themes.light ? "bg-neutral-500" : "bg-base-200"
+            }`}
+          >
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/about"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/resume"
+              >
+                Resume
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/skills"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/projects"
+              >
+                Project
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link link-hover ${
+                  theme === themes.light ? "link-neutral" : ""
+                }`}
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <label className="flex cursor-pointer gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+                </svg>
+                <input
+                  type="checkbox"
+                  value="synthwave"
+                  className="toggle theme-controller"
+                  onChange={() => toggleTheme()}
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </label>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

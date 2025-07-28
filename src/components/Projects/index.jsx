@@ -20,10 +20,10 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className={`w-full p-20`}>
+    <div className="p-5 w-full lg:p-20">
       <div className="flex justify-between w-full mb-6">
         <h2
-          className={`text-2xl  ${
+          className={`text-base lg:text-2xl ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >
@@ -31,12 +31,12 @@ const ProjectsPage = () => {
           rojects
         </h2>
         <hr
-          className={` w-5/6 self-end ${
+          className={`hidden lg:inline w-5/6 self-end ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         />
       </div>
-      <ul className="flex flex-wrap gap-6 items-center justify-center">
+      <ul className="gap-2 flex flex-wrap lg:gap-6 items-center justify-center">
         {visibleProjects.map((project) => (
           <ProjectItem key={project.id} details={project} />
         ))}

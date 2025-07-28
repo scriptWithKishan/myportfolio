@@ -5,17 +5,17 @@ const SkillItem = ({ details }) => {
   const { theme, themes } = useTheme();
 
   return (
-    <li className="p-4 w-[200px] h-[220px] space-y-3">
+    <li className="w-[140px] h-[220px] p-4 lg:w-[200px] lg:h-[220px] space-y-3">
       <div className="text-3xl">{icon}</div>
       <h3
-        className={`text-sm font-semibold ${
+        className={`text-xs lg:text-sm font-semibold ${
           theme === themes.light ? "text-black" : "text-white"
         }`}
       >
         {name}
       </h3>
       <p
-        className={`text-xs font-semibold ${
+        className={`text-xs  ${
           theme === themes.light ? "text-black" : "text-white"
         }`}
       >

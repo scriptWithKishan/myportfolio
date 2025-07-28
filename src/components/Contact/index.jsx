@@ -29,10 +29,10 @@ const ContactPage = () => {
   };
 
   return (
-    <div className={`w-full p-20`}>
+    <div className="p-5 w-full lg:p-20">
       <div className=" flex justify-between w-full mb-6">
         <h2
-          className={`text-2xl  ${
+          className={`text-base lg:text-2xl ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         >
@@ -40,16 +40,16 @@ const ContactPage = () => {
           ontact Me
         </h2>
         <hr
-          className={` w-5/6 self-end ${
+          className={`hidden lg:inline w-5/6 self-end ${
             theme === themes.light ? "text-black" : "text-white"
           }`}
         />
       </div>
-      <div className="w-full flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center mt-10">
         <form
           ref={formRef}
           onSubmit={sendEmail}
-          className="flex flex-col space-y-2 w-2xl"
+          className="w-[300px] flex flex-col space-y-2 lg:w-[400px]"
         >
           <div className="space-y-2">
             <label
@@ -68,7 +68,7 @@ const ContactPage = () => {
                 id="username"
                 type="text"
                 placeholder="John Doe"
-                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md w-md"
+                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md"
                 required
                 pattern="[A-Za-z][A-Za-z0-9\-]*"
                 minLength="3"
@@ -98,7 +98,7 @@ const ContactPage = () => {
                 id="email"
                 type="email"
                 placeholder="johndoe@example.com"
-                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md w-md"
+                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md"
                 required
               />
             </label>
@@ -121,7 +121,7 @@ const ContactPage = () => {
                 name="message"
                 id="message"
                 placeholder="Your Message"
-                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md w-md"
+                className="bg-transparent border-gray-500 border-1 text-gray-500 outline-0 p-2 rounded-md"
                 required
                 minLength="15"
                 maxLength="155"

@@ -5,7 +5,7 @@ const ResumePage = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center space-y-8">
-      <div className="flex items-center space-x-10">
+      <div className="flex-col space-x-0 space-y-10 lg:flex-row flex items-center lg:space-x-10 lg:space-y-0">
         <img
           className={`w-[350px] h-[500px] ${
             theme === themes.light
@@ -30,7 +30,7 @@ const ResumePage = () => {
         />
       </div>
       <p
-        className={`text-base ${
+        className={`mb-10 lg:mb-0 text-base ${
           theme === themes.light ? "text-black" : "text-white"
         }`}
       >
